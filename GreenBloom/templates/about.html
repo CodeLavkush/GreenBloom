@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <title>About us | GreenBloom</title>
+    <link rel="stylesheet" href="{% static 'css/main/about.css'%}">
+{% endblock %}
+{% block body %}
+    
+    <div class="main-container">
+        {% include "navbar.html" %}
+        <div class="banner">
+        </div>
+        <div class="info">
+            <div class="left">
+                <img src="{% static 'imgs/pot_3.png'%}" alt="pot image">
+            </div>
+            <div class="right">
+                <h2>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et culpa corporis cumque accusantium veritatis totam harum explicabo dicta repudiandae quibusdam aliquam at ipsa numquam ipsam nemo, exercitationem omnis in eius nihil blanditiis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero velit quidem eligendi dignissimos, repudiandae magni accusamus totam corrupti fugit amet, quae quaerat in at? Libero, quibusdam! Ipsa assumenda inventore saepe. Deleniti, cupiditate nobis, aperiam, placeat soluta ipsum molestiae inventore iusto vero possimus vel blanditiis!</p>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}
+{% endblock %}

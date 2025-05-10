@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <title>Home | GreenBloom</title>
+    <link rel="stylesheet" href="{% static "css/main/home.css"%}">
+{% endblock %}
+{% block body %}
+    <div class="hero-section">
+        {% include "navbar.html" %}
+        <div class="main-hero">
+            <h1>Bringing Green to Every Space</h1>
+            <p>Discover a greener lifestyle with our curated collection of sustainable plants and eco-conscious products. From homes to workspaces, we help nature thrive wherever you are.</p>
+            <div class="btns">
+                <button class="fill-btn">
+                    <a href="{% url "products"%}">Buy now</a>
+                </button>
+                <button class="ghost-btn">
+                    <a href="{% url "about"%}">About</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="product-showcase">
+        <div class="product-card">
+                <div class="pot">
+                    <img src="{% static "imgs/pot_1.png" %}" alt="Plant pot">
+                    <span>Highted Pot</span>
+                </div>
+                <div class="pot">
+                    <img src="{% static "imgs/pot_2.png" %}" alt="Plant pot">
+                    <span>Small Pot</span>
+                </div>
+                <div class="pot">
+                    <img src="{% static "imgs/pot_3.png" %}" alt="Plant pot">
+                    <span>Fat Pot</span>
+                </div>
+            </div>
+    </div>
+    <div class="call-to-action">
+        <p>Join our thriving community of plant lovers</p>
+        <a href="{% url "register"%}">Join us</a>
+    </div>
+    {% include "footer.html" %}
+{% endblock %}

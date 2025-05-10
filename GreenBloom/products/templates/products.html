@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <title>Products | GreenBloom</title>
+    <link rel="stylesheet" href="{% static "css/products/products_lists.css"%}">
+{% endblock %}
+{% block body %}
+    <div class="main-container">
+        {% include "navbar.html" %}
+        <div class="aside">
+            <div class="left">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{filterSearch.category}}
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+            <div class="right">
+                {% if is_filter %}
+                    {% for product in filterProduct %}
+                        <div class="card">
+                            <img src="{{product.photo.url}}" alt="pot image">
+                            <p class="title">{{product.name}}</p>
+                            <div class="details">
+                                <p>Description: {{product.desc}}</p>
+                                <p>Category: {{product.get_category_display}}</p>
+                                <p>Stock: {{product.stock}}</p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p class="no-found">No products found.</p>
+                    {% endfor %}
+                {% else %}
+                    {% for product in products %}
+                        <div class="card">
+                            <img src="{{product.photo.url}}" alt="pot image">
+                            <p class="title">{{product.name}}</p>
+                            <div class="details">
+                                <p>Description: {{product.desc}}</p>
+                                <p>Category: {{product.get_category_display}}</p>
+                                <p>Stock: {{product.stock}}</p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p class="no-found">No products found.</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

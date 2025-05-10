@@ -1,0 +1,12 @@
+{% load static %}
+<footer>
+    <div class="logo">
+        <img src="{% static "imgs/leaf.png"%}" alt="">
+        <span>Green Gloom</span>
+    </div>
+    <ul>
+        <li><a href="{% url 'about'%}">About us</a></li>
+        <li><a href="{% url 'contact'%}">Contact us</a></li>
+        <li><a href="{% url 'products'%}">Products</a></li>
+    </ul>
+</footer>

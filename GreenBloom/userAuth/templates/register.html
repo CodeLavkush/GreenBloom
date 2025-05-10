@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <title>Register | GreenBloom</title>
+    <link rel="stylesheet" href="{% static "css/userAuth/register.css"%}">
+{% endblock %}
+{% block body %}
+    <div class="main-container">
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <h1>Register</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.username }}
+                {{ form.email }}
+                {{ form.password1 }}
+                {{ form.password2 }}
+                <button type="submit">Register</button>
+            </form>
+            {{form.username.errors}}
+            {{form.email.errors}}
+            {{form.password1.errors}}
+            {{form.password2.errors}}
+            <p>Already have an account? <a href="{% url "login"%}">Login here</a></p>
+        </div>
+    </div>
+{% endblock %}

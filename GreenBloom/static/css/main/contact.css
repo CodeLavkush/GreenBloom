@@ -1,0 +1,116 @@
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #4CAF50, #F9F9F6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .left{
+        flex: 1;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+
+        h2{
+            font-size: 1.6rem;
+            font-family: var(--font-text);
+            font-weight: 800;
+            letter-spacing: .1rem;
+        }
+        
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            gap: 1rem;
+
+            input{
+                border: none;
+                outline: none;
+
+                width: 50%;
+                height: 10%;
+                padding: 1rem;
+
+                border-radius: .2rem;
+                font-family: var(--font-text);
+                font-weight: 600;
+            }
+
+            textarea{
+                width: 50%;
+                height: 50%;
+                border: none;
+                outline: none;
+                padding: 1rem;
+                resize: none;
+                font-family: var(--font-text);
+                font-weight: 600;
+            }
+
+            button{
+                width: 16%;
+                height: 10%;
+                border: none;
+                outline: none;
+                border-radius: .2rem;
+                font-family: var(--font-text);
+                font-weight: 600;
+                transition: all 3ms ease-in-out;
+                background-color: var(--color-secondary);
+                color: var(--color-text);
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #d4694c88;
+                }
+
+                &:active{
+                    scale: .9;
+                }
+            }
+        }
+
+        .errorlist{
+            li{
+                width: 100%;
+                color: rgb(219, 87, 87);
+                font-family: var(--font-text);
+                font-size: 1.2rem;
+                font-weight: 600;
+                list-style: none;
+            }
+        }
+    }
+
+    .right{
+        flex: 2;
+        height: 100%;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 40%;
+            border-radius: 91% 9% 21% 79% / 57% 43% 57% 43%;
+        }
+
+        .outline-border{
+            width: 40%;
+            height: 80%;
+            position: absolute;
+            border-radius: 22% 78% 69% 31% / 80% 25% 75% 20%;
+            border: .4rem solid rgb(117, 28, 28);
+            rotate: 120deg;
+        }
+    }
+}

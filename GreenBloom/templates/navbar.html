@@ -1,0 +1,25 @@
+{% load static %}
+<nav>
+    <ul class="left-ul">
+        <li class="logo-img"><img src="{% static 'imgs/leaf.png'%}" alt="logo"></li>
+        <li class="logo-text">GreenBloom</li>
+    </ul>
+    <ul class="right-ul">
+        <li><a href="{% url 'about'%}">About</a></li>
+        <li><a href="{% url 'contact'%}">Contact</a></li>
+        <li><a href="{% url 'products'%}">Products</a></li>
+        {% if user.is_authenticated %}
+                <li class="user">Hi, {{user.username}}</li>
+                <li class="logout-btn">
+                    <form method="POST" action="{% url 'user_logout'%}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            {% else  %}
+                <li>
+                    <a class="register-btn" href="{% url "register"%}">Register</a>
+                </li>
+        {% endif %}
+    </ul>
+</nav>

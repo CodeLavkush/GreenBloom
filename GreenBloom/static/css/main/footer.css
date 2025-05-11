@@ -9,12 +9,20 @@ footer{
     color: var(--color-text);
     padding: 0 1rem;
 
+    @media (max-width: 1040px) {
+        flex-direction: column;
+    }
+
     .logo{
         display: flex;
         justify-content: center;
         align-items: center;
         width: 20%;
         height: 100%;
+
+        @media (max-width: 470px) {
+            width: 100%;
+        }
 
         img{
             width: 10%;
@@ -30,6 +38,14 @@ footer{
 
         list-style: none;
         flex-direction: column;
+
+        @media (max-width: 1040px) {
+            width: 40%;
+        }
+        @media (max-width: 470px) {
+            width: 100%;
+            gap: 1rem;
+        }
 
         li{
             width: 40%;

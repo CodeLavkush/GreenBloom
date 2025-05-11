@@ -15,6 +15,10 @@
         flex-direction: column;
         gap: 2rem;
 
+        @media (max-width: 440px) {
+            width: 100%;
+        }
+
         h2{
             font-size: 1.6rem;
             font-family: var(--font-text);
@@ -42,6 +46,10 @@
                 border-radius: .2rem;
                 font-family: var(--font-text);
                 font-weight: 600;
+
+                @media (max-width: 440px) {
+                    width: 80%;
+                }
             }
 
             textarea{
@@ -53,6 +61,9 @@
                 resize: none;
                 font-family: var(--font-text);
                 font-weight: 600;
+                @media (max-width: 440px) {
+                    width: 80%;
+                }
             }
 
             button{
@@ -67,6 +78,10 @@
                 background-color: var(--color-secondary);
                 color: var(--color-text);
                 cursor: pointer;
+
+                @media (max-width: 440px) {
+                    width: 20%;
+                }
 
                 &:hover{
                     background-color: #d4694c88;
@@ -98,6 +113,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (max-width: 770px) {
+            display: none;
+        }
 
         img{
             width: 40%;

@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from dotenv import load_dotenv
+import dj_database_url
 from pathlib import Path
 
 load_dotenv()
+ENVIRONMENT = os.getenv('ENVIRONMENT')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,7 +90,8 @@ DATABASES = {
     }
 }
 
-
+if ENVIRONMENT == 'production':
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_EXTERNAL_URL'))
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 

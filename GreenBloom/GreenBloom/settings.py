@@ -91,7 +91,7 @@ DATABASES = {
 }
 
 if ENVIRONMENT == 'production':
-    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_EXTERNAL_URL'))
+    DATABASES['default'] = dj_database_url.parse(os.getenv('DATABASE_INTERNAL_URL') if ENVIRONMENT == 'production' else os.getenv('DATABASE_EXTERNAL_URL'))
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 

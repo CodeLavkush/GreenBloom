@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'GreenBloom.GreenBloom.urls'
+ROOT_URLCONF = 'GreenBloom.urls'
 
 TEMPLATES = [
     {
